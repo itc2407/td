@@ -60,7 +60,7 @@
 </head>
 
 <body>
-  <img src="https://itc.edu.vn/Data/Sites/1/media/img/logo.png" style="">
+  <img src="https://itc.edu.vn/Data/Sites/1/media/img/logo.png">
   <div class="container">
     <h3>Tính Điểm Tốt Nghiệp THPT (GDTX)</h3>
     <label for="math">Điểm Toán:</label>
@@ -76,8 +76,7 @@
     <input type="number" id="grade-12" min="0" max="10" step="0.1" required>
 
     <label for="bonus">Điểm Khuyến Khích:</label>
-    <input type="number" id="bonus" min="0" max="10" step="0.1" required>
-
+     <input type="number" id="bonus" min="0" max="10" step="0.1" required>
     <label for="priority">Điểm Ưu Tiên:</label>
     <input type="number" id="priority" min="0" max="10" step="0.1" required>
 
@@ -97,7 +96,7 @@
 
       const totalExamPoints = (math + literature + groupExam) / 3;
       const totalBonusPoints = bonus / 4;
-      const finalGrade = ((totalExamPoints * 7 + grade12 * 3) / 10 + priority);
+      const finalGrade = ((totalExamPoints + totalBonusPoints) * 7 + (grade12 * 3)) / 10 + priority;
 
       document.getElementById("result").textContent = `Điểm Tốt Nghiệp THPT của bạn là: ${finalGrade.toFixed(2)}`;
     }
